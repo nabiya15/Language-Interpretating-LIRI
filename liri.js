@@ -80,7 +80,7 @@ function movieThis(searchCommand,searchItem){
 	var queryUrl = "http://www.omdbapi.com/?t=" + searchItem + "&y=&plot=short&apikey=40e9cece";
 	request(queryUrl, function(error, response, body) {
 		if (!error && response.statusCode === 200) {
-		    console.log(JSON.parse(body));
+		    //console.log(JSON.parse(body));
 			dataoutput=spacer+"\n"+" Title: \n "+JSON.parse(body).Title+"\n"+spacer+"\n"+" Release Year: \n " + body.Year+"\n"+spacer+"\n"+" IMDB Rating: \n " + JSON.parse(body).Ratings[0].Value+"\n"+spacer+"\n"+" Rotten Tomato Rating: \n " + JSON.parse(body).Ratings[1].Value+"\n"+spacer+"\n"+" Country of production: \n " + JSON.parse(body).Country+"\n"+spacer+"\n"+" Language: \n " + JSON.parse(body).Language+"\n"+spacer+"\n"+" Plot: \n " + JSON.parse(body).Plot+"\n"+spacer+"\n"+" Actors: \n " + JSON.parse(body).Actors+"\n"+spacer+"\n";
 			console.log(dataoutput);
 			logdata(dataoutput);
